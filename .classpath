@@ -39,5 +39,6 @@
 	<classpathentry kind="lib" path="C:/Users/Lelê/Documents/jars/hibernate-release-5.4.0.Final/lib/required/txw2-2.3.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Lelê/Desktop/livraria-orig/WebContent/WEB-INF/lib/mysql-connector-java-5.1.22-bin.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Lelê/Desktop/livraria-orig/WebContent/WEB-INF/lib/validation-api-1.0.0.GA.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lelê/Documents/jars/primefaces-6.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
 
 <h:body>
+	<p:button outcome="productDetail" value="Bookmark" icon="pi pi-star" style="margin-right:20px;">
+    <f:param name="productId" value="10" />
+</p:button>
+	
 	<h1>Adicionar Cerveja</h1>
 	<h:form>
-		<fieldset>
-			<legend>Dados da Cerveja</legend>
+		<p:fieldset legend="Dados da Cerveja">
 
 			<h:outputText value="Rótulo: " for="rotulo" />
 			<h:inputText id="rotulo" size="55"
 				value="#{cervejaBean.cerveja.rotulo}" />
 			<h:outputText value=" Nota: " for="nota" />
 			<h:inputText id="nota" />
-
+			
 			<h:panelGrid columns="4">
 				<h:outputText value="Cervejaria: " for="cervejaria" />
 				<h:inputText id="cervejaria"
@@ -30,17 +34,20 @@
 				<h:outputText value="Preço pago: " for="preco" />
 				<h:inputText id="preco" value="#{cervejaBean.cerveja.preco}" />
 			</h:panelGrid>
-		</fieldset>
+		</p:fieldset>
 		<p />
+		
+		
 		<fieldset>
 			<legend>Características da Cerveja</legend>
+			
 			<h:panelGrid columns="4">
 				<h:outputText value="Familia: " for="familia" />
-				<h:inputText id="familia" label="(ex: lager)"
-					value="#{cervejaBean.cerveja.familia}" />
+				<p:inputTextarea completeMethod="#{PFView.completeArea}" 
+				queryDelay="250" minQueryLength="2"  id="familia" value="#{cervejaBean.cerveja.familia}"/>
 
 				<h:outputText value="Estilo: " for="estilo" />
-				<h:inputText id="estilo" value="#{cervejaBean.cerveja.estilo}" />
+				<p:inputTextarea id="estilo" value="#{cervejaBean.cerveja.estilo}"/>
 
 				<h:outputText value="Teor Alcoolico " for="teor_alcoolico" />
 				<h:inputText id="teor_alcoolico"
@@ -78,7 +85,7 @@
 					value="#{cervejaBean.cerveja.temperatura}" />
 					
 				<h:outputText value="Comentários: " for="comentarios" />
-				<h:inputText id="comentarios" size="90"
+				<h:inputText id="comentarios" size="70"
 				value="#{cervejaBean.cerveja.comentarios}" />	
 
 			</h:panelGrid>
@@ -87,6 +94,7 @@
 		</fieldset>
 		<h:commandButton value="Enviar" action="#{cervejaBean.gravar}" />
 	</h:form>
+	
 </h:body>
 
 </html>
