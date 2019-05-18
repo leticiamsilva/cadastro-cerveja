@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html">
+	<h:head>
+		<script src="js/geral.js"></script>
+		<title>Cadastro cervejas</title>
+
+		<style type="text/css">
+			.larguraMetade { width: 50%;	}
+			
+			.aEsquerda{
+				clear: left;
+				float: left;
+			}
+			
+			.aDireita {
+				clear: right;
+				float: right;		
+			}
+		</style>
+
+	</h:head>
+
+	<h:body>
+
+		<h1>Adicionar Cerveja</h1>
+		<h:form>
+			<p:fieldset legend="Dados da Cerveja" class="larguraMetade">			
+	
+	
+				<h:panelGrid class="aEsquerda">
+					<p:outputLabel  value="Rótulo: " for="rotulo" />
+					<p:inputTextarea rows="1" cols="60" id="rotulo" size="55"
+						value="#{cervejaBean.cerveja.rotulo}" />
+				</h:panelGrid>
+
+				
+				<h:panelGrid  class="aDireita">
+					<p:outputLabel value=" Nota: " for="nota" />
+					<p:inputNumber value="#{cervejaBean.cerveja.nota}" id="nota">
+					</p:inputNumber>
+				</h:panelGrid>
+
+
+				<h:panelGrid class="aEsquerda">
+					<h:outputText value="Cervejaria: " for="cervejaria" style="float:left"/>
+					<p:inputTextarea rows="1" cols="45" id="cervejaria" style="float:left"
+						value="#{cervejaBean.cerveja.cervejaria}" />
+				</h:panelGrid>
+
+				<h:panelGrid  class="aDireita">
+					<p:outputLabel value="País: " for="pais" />
+					<p:inputTextarea rows="1" cols="45" id="pais"
+						value="#{cervejaBean.cerveja.pais}" />
+				</h:panelGrid>
+
+				<h:panelGrid class="aEsquerda">
+					<p:outputLabel value="Tamanho (ml): " for="tamanho" />
+					<p:inputTextarea rows="1" cols="45" id="tamanho"
+						value="#{cervejaBean.cerveja.tamanho}" />
+				</h:panelGrid>
+
+				<h:panelGrid  class="aDireita">
+					<p:outputLabel value="Preço pago: " for="preco" />
+					<p:inputTextarea rows="1" cols="45" id="preco"
+						value="#{cervejaBean.cerveja.preco}" />
+				</h:panelGrid>
+			</p:fieldset>
+			<p />
+
+
+			<p:fieldset legend="Características da Cerveja"  class="larguraMetade">
+
+				<h:panelGrid class="aEsquerda">
+					<p:outputLabel value="Familia: " for="familia" />
+					<p:inputTextarea rows="1" cols="45" id="familia"
+						value="#{cervejaBean.cerveja.familia}" />
+				</h:panelGrid>
+
+				<h:panelGrid  class="aDireita">
+					<p:outputLabel value="Estilo: " for="estilo" />
+					<p:inputTextarea rows="1" cols="45" id="estilo"
+						value="#{cervejaBean.cerveja.estilo}" />
+				</h:panelGrid>
+
+				<h:panelGrid class="aEsquerda">
+					<p:outputLabel value="Teor Alcoolico " for="teor_alcoolico" />
+					<p:inputTextarea rows="1" cols="45" id="teor_alcoolico"
+						value="#{cervejaBean.cerveja.teor_alcoolico}" />
+				</h:panelGrid>
+
+				<h:panelGrid  class="aDireita">
+					<p:outputLabel value="IBU: " for="ibu" />
+					<p:inputTextarea rows="1" cols="45" id="ibu"
+						value="#{cervejaBean.cerveja.ibu}" />
+				</h:panelGrid>
+
+				<h:panelGrid class="aEsquerda">
+					<p:outputLabel value="Coloracao (SRM): " for="ibu" />
+					<p:selectOneMenu value="#{cervejaBean.cerveja.coloracao}"
+						cols="200">
+						<f:selectItem itemValue="amareloPalha"
+							itemLabel="Amarelo Palha (2 SRM)" />
+						<f:selectItem itemValue="amarelo" itemLabel="Amarelo (3 SRM)" />
+						<f:selectItem itemValue="amareloForte"
+							itemLabel="Amarelo Forte(4 SRM)" />
+						<f:selectItem itemValue="dourado" itemLabel="Dourado (6 SRM)" />
+						<f:selectItem itemValue="ambar" itemLabel="Âmbar (8 SRM)" />
+						<f:selectItem itemValue="cobreClaro"
+							itemLabel="Cobre-claro (10 SRM)" />
+						<f:selectItem itemValue="cobre" itemLabel="Cobre (13 SRM)" />
+						<f:selectItem itemValue="marromClaro"
+							itemLabel="Marrom Claro(17 SRM)" />
+						<f:selectItem itemValue="marrom" itemLabel="Marrom (20 SRM)" />
+						<f:selectItem itemValue="marromEscuro"
+							itemLabel="Marrom Escuro (24 SRM)" />
+						<f:selectItem itemValue="marromMuitoEscuro"
+							itemLabel="Marrom Muito Escuro (29 SRM)" />
+						<f:selectItem itemValue="preto" itemLabel="Preto (35 SRM)" />
+						<f:selectItem itemValue="pretoOpaco"
+							itemLabel="Preto Opaco (40+ SRM)" />
+					</p:selectOneMenu>
+				</h:panelGrid>
+
+				<h:panelGrid  class="aDireita">
+					<p:outputLabel value="Temperatura ideal " for="temperatura" />
+					<p:inputTextarea rows="1" cols="45" id="temperatura"
+						value="#{cervejaBean.cerveja.temperatura}" />
+				</h:panelGrid>
+				
+				<h:panelGrid  class="aEsquerda">
+					<p:outputLabel value="Comentários: " for="comentarios" />
+					<p:inputTextarea rows="5" cols="120" id="comentarios"
+						value="#{cervejaBean.cerveja.comentarios}" />
+				</h:panelGrid>
+
+				<h:panelGrid  class="aEsquerda">
+				<p:commandButton value="Salvar" id="withIcon" cols="55"
+					action="#{cervejaBean.gravar}" style="margin: 10px 0 2px; width:120px"
+					icon="pi pi-save" />
+				</h:panelGrid>
+
+			</p:fieldset>
+
+
+
+
+		</h:form>
+	</h:body>
+</f:view>
+</html>
