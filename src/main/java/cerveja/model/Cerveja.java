@@ -7,21 +7,21 @@ import javax.persistence.Entity;
 @Table(name="cerveja")
 public class Cerveja {
 
-	 @Id
-	private String rotulo;
-	private double nota;
-	private String cervejaria;
-	private double preco;
-	private double tamanho;
-	private String pais;
+	@Id
+	public String rotulo;
+	public double nota;
+	public String cervejaria;
+	public double preco;
+	public double tamanho;
+	public String pais;
 
-	private String familia;
-	private String estilo;
-	private double teor_alcoolico;
-	private int ibu;
-	private String coloracao;
-	private double temperatura;
-	private String comentarios;
+	public String familia;
+	public String estilo;
+	public double teor_alcoolico;
+	public int ibu;
+	public String coloracao;
+	public double temperatura;
+	public String comentarios;
 
 	public String getComentarios() {
 		return comentarios;

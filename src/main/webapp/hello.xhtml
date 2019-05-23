@@ -36,16 +36,14 @@
 				<h:panelGrid class="aEsquerda">
 					<p:outputLabel  value="Rótulo: " for="rotulo" />
 					<p:inputTextarea rows="1" cols="60" id="rotulo" size="55"
-						value="#{cervejaBean.cerveja.rotulo}" />
+						value="#{cervejaBean.cerveja.rotulo}"  required="true" requiredMessage="Campo obrigatório" />
 				</h:panelGrid>
-
 				
 				<h:panelGrid  class="aDireita">
 					<p:outputLabel value=" Nota: " for="nota" />
 					<p:inputNumber value="#{cervejaBean.cerveja.nota}" id="nota">
 					</p:inputNumber>
 				</h:panelGrid>
-
 
 				<h:panelGrid class="aEsquerda">
 					<h:outputText value="Cervejaria: " for="cervejaria" style="float:left"/>
@@ -72,8 +70,6 @@
 				</h:panelGrid>
 			</p:fieldset>
 			<p />
-
-
 			<p:fieldset legend="Características da Cerveja"  class="larguraMetade">
 
 				<h:panelGrid class="aEsquerda">
@@ -146,11 +142,12 @@
 				</h:panelGrid>
 
 			</p:fieldset>
-
-
-
-
 		</h:form>
+		<h:panelGrid  class="aEsquerda">
+				<p:commandButton value="Listar Cervejas" id="withIcon"
+					action="#{cervejaBean.listar}" style="margin: 10px 0 50px; width:695px; height: 40px"
+					icon="pi pi-save" />
+		</h:panelGrid>
 	</h:body>
 </f:view>
 </html>
