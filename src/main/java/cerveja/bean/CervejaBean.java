@@ -15,6 +15,14 @@ public class CervejaBean
 {
 	public static ArrayList<Cerveja> cervejas = new ArrayList<Cerveja>();
 	private Cerveja cerveja = new Cerveja();
+	private ArrayList<Cerveja> cervejasLista =  new ArrayList<Cerveja>();
+	
+	
+	public ArrayList<Cerveja> getCervejas()
+	{
+		return cervejas;
+	}
+	
 	
 	public Cerveja getCerveja() {
 		return cerveja;
@@ -33,12 +41,6 @@ public class CervejaBean
         System.out.println("Gravando cerveja " + this.cerveja.getRotulo());
         //new DAO<Cerveja>(Cerveja.class).incluir(this.cerveja);        
 	}
-	
-	public void listar()
-	{
-		 for(int i=0; i < cervejas.size(); i++) {
-        	 System.out.println(cervejas.get(i).getRotulo());        		
-        }
-	}
+
 
 }
