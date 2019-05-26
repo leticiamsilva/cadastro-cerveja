@@ -6,7 +6,6 @@ import javax.faces.bean.ManagedBean;
 
 import org.springframework.web.context.annotation.RequestScope;
 
-import cerveja.dao.DAO;
 import cerveja.model.Cerveja;
 
 @RequestScope
@@ -41,6 +40,17 @@ public class CervejaBean
         System.out.println("Gravando cerveja " + this.cerveja.getRotulo());
         //new DAO<Cerveja>(Cerveja.class).incluir(this.cerveja);        
 	}
+	
+	public void remover(Cerveja cerveja) {
+	    System.out.println("Removendo cerveja desejada " + cerveja.getRotulo());	    
+	    cervejas.remove(cerveja); //removendo da lista
+	    this.cervejasLista.remove(cerveja);
+	    //new DAO<Cerveja>(Cerveja.class).remove(cerveja);
+	}
 
-
+	public void carregar(Cerveja cerveja) {	   
+	    this.cerveja = cerveja;
+	    System.out.println("carregou " + cerveja.getRotulo());	
+	}
+	
 }

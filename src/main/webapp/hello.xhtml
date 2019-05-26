@@ -138,7 +138,7 @@
 					<p:inputTextarea rows="5" cols="120" id="comentarios"
 						value="#{cervejaBean.cerveja.comentarios}" />
 				</h:panelGrid>
-				
+
 				<h:panelGrid class="aDireita">
 					<p:commandButton value="Listar Cervejas" id="withIcon"
 						update=":cervejasCadastradas" cols="55"
@@ -151,29 +151,40 @@
 						style="margin: 10px 0 2px; width:120px" icon="pi pi-save" />
 				</h:panelGrid>
 
-				
+
 
 			</p:fieldset>
 		</h:form>
 
 		<h:panelGrid class="aEsquerda larguraMetade">
-			<p:dataTable id="cervejasCadastradas" var="cer" rendered="true"
-				value="#{cervejaBean.cervejas}">
+			<h:form id="cervejasCadastradas">
+				<p:dataTable var="cer" rendered="true"
+					value="#{cervejaBean.cervejas}">
 
-				<p:column headerText="Rotulo">
-					<h:outputText value="#{cer.rotulo}" />
-				</p:column>
+					<p:column headerText="Rotulo">
+						<h:outputText value="#{cer.rotulo}" />
+					</p:column>
 
-				<p:column headerText="Cervejaria">
-					<h:outputText value="#{cer.cervejaria}"></h:outputText>
-				</p:column>
+					<p:column headerText="Cervejaria">
+						<h:outputText value="#{cer.cervejaria}"></h:outputText>
+					</p:column>
 
-				<p:column headerText="Nota">
-					<h:outputText value="#{cer.nota}" />
-				</p:column>
-			</p:dataTable>
+					<p:column headerText="Nota">
+						<h:outputText value="#{cer.nota}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">Remover</f:facet>
+						<h:commandLink value="Clique para remover" action="#{cervejaBean.remover(cer)}" />
+					</p:column>
+					
+					<p:column>
+			            <f:facet name="header">Alterar</f:facet>
+			            <h:commandLink value="Clique para alterar" action="#{cervejaBean.carregar(cer)}" />
+			        </p:column>
+				</p:dataTable>
+			</h:form>
 		</h:panelGrid>
-
 	</h:body>
 </f:view>
 </html>
